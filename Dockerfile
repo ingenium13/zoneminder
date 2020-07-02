@@ -85,6 +85,9 @@ RUN	apt-get -y remove make && \
 	rm -rf /tmp/* /var/tmp/* && \
 	chmod +x /etc/my_init.d/*.sh
 
+RUN     cp /root/apache_cron /etc/cron.daily/apache_cron && \
+        chmod +x /etc/cron.daily/apache_cron
+
 VOLUME \
 	["/config"] \
 	["/var/cache/zoneminder"]
